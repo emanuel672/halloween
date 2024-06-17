@@ -1,0 +1,78 @@
+@import url("https://fonts.googleapis.com/css?family=Nosifer");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  background: rgb(0, 0, 0);
+  overscroll-behavior-x: none;
+  overscroll-behavior-y: none;
+  overflow: hidden;
+}
+body {
+  width: 100vw;
+  height: 100vh;
+  text-align: center;
+  line-height: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+h1 {
+  font-family: "Nosifer", sans-serif;
+  font-size: 10vw;
+  color: rgba(255, 255, 255, 1);
+  opacity: 0.2;
+
+  -webkit-text-stroke: 2px rgba(230, 85, 85, 0.8);
+  text-stroke: 2px rgba(233, 85, 85, 0.8);
+
+  pointer-events: none;
+}
+canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
+}
+section {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2px;
+  flex-wrap: wrap;
+  overflow: hidden;
+  z-index: 0;
+}
+section::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(#000, rgba(0, 255, 0, 0.72), #000);
+  animation: animate 5s linear infinite;
+}
+@keyframes animate {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+section span {
+  position: relative;
+  display: block;
+  width: calc(6.25vw - 2px);
+  height: calc(6.25vw - 2px);
+  background: #000000;
+  z-index: 2;
+  transition: 1.5s;
+}
